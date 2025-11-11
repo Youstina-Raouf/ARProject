@@ -1,0 +1,238 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{AR Project Report}
+
+\lhead{Media Informatics}
+\rfoot{\thepage}
+
+\title{
+    \vspace{2cm}
+    \Huge\textbf{AR Ancient Egyptian Artifacts Explorer}\\[0.5cm]
+    \Large Media Informatics Project Report\\[2cm]
+}
+
+\author{
+    \begin{center}
+        \Large\textbf{Submitted by}\\[0.5cm]
+        \normalsize
+        \begin{tabular}{rl}
+            \textbf{Name} & \textbf{ID} \\
+            Youstina Raouf & 13001755 \\
+            Manuel Youssef & 13006600 \\
+            Chantal Sherif & 13007034 \\
+            Ebram Hany & 13002244 \\
+        \end{tabular}
+    \end{center}
+}
+
+\date{
+    \vfill
+    \begin{center}
+        \Large\today
+    \end{center}
+}
+
+
+\begin{document}
+
+\maketitle
+
+\vspace{0.5cm}
+
+\section*{Project Idea}
+This project is an Augmented Reality (AR) treasure hunt game designed around the theme of Ancient Egyptian artifacts. Players use their mobile camera to scan printed image markers in the real world. Each marker reveals a 3D artifact in AR, and players must answer historical quizzes to collect each treasure and progress.
+
+\newpage
+
+\section{Design and Implementation}
+
+\subsection*{AR Framework}
+We used Unity with the Vuforia SDK for AR image tracking. An AR Camera detects physical image targets and anchors 3D models to them in real-time.
+
+\subsection*{Artifacts}
+\begin{itemize}[noitemsep]
+    \item \textbf{5 imported} artifacts from external 3D resources (e.g., sarcophagus, scarab, statue).
+    \item \textbf{2 Unity-made} objects: a pyramid and an obelisk.
+    \item All objects are textured and placed above image targets for correct visibility.
+\end{itemize}
+
+\subsection*{Image Targets}
+Each object is linked to a unique image target from a Vuforia-trained database. These printed targets are distributed in the physical environment.
+
+\subsection*{Interaction}
+Players interact by tapping on objects. Upon interaction:
+\begin{itemize}[noitemsep]
+    \item A quiz pops up with a historical question.
+    \item Correct answers cause the object to disappear.
+    \item A Sound is played when an artifact appears to the user.
+    \item A success sound plays and the treasure counter is incremented.
+    
+\end{itemize}
+
+\subsection*{UI Elements}
+\begin{itemize}[noitemsep]
+    \item Score tracker for treasures found.
+    \item Text clues guide players.
+    \item Final win screen and quit button included.
+\end{itemize}
+
+\subsection*{Audio}
+Sound feedback is integrated to improve immersion when a treasure is successfully collected.
+
+\newpage
+
+\section{Questionnaire and User Feedback}
+
+A feedback form was distributed to 5 users who tested the game. The form included both rating scales and open-ended questions. Below are summarized insights from their responses.
+
+
+\subsection*{The Results Of The Questionnaire}
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{age.png}
+        \caption{age}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{gender.png}
+        \caption{gender}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Have you played a similar AR-based game before?.png}
+        \caption{Have you played a similar AR-based game before?}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Have you used any AR tools before?.png}
+        \caption{Have you used any AR tools before?}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{how did you like the sounds in the game?.png}
+        \caption{how did you like the sounds in the game?}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{how easy did you find the navigation using your device camera?.png}
+        \caption{how easy did you find the navigation using your device camera?}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{how easy were the interactions with the treasures?.png}
+        \caption{how easy were the interactions with the treasures?}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{How likely are you to recommend this game to a friend?.png}
+        \caption{How likely are you to recommend this game to a friend?}
+    \end{minipage}
+\end{figure}
+
+
+\vspace{0.5cm}
+
+\textbf{ 1-Did you play the game until you won? Why or why not?}
+\begin{itemize}
+    \item No, my camera was lagging a bit.
+    \item No, I had some trouble recognizing one of the markers.
+    \item Yes, I liked the sounds and the reward feeling after each treasure.
+    \item Yes, it was fun and I wanted to see all the artifacts.
+    \item Yes, the quiz part motivated me to keep going.
+\end{itemize}
+
+
+
+\textbf{2-What did you learn or find interesting about Ancient Egyptian artifacts during the game?}
+\begin{itemize}
+    \item The part about mummification for the afterlife made me curious to learn more about Egyptian beliefs.
+    \item I learned about the pyramid structure and its symbolism.
+    \item I didn’t know the obelisk was Egyptian.
+    \item I didn’t know that Hatshepsut was the first female pharaoh — that was really interesting.
+\end{itemize}
+
+
+
+
+\textbf{3-What would you improve or add if you could change one thing about the game?}
+\begin{itemize}
+    \item Some artifacts took time to detect; maybe improve the image recognition speed.
+    \item Add more levels or a second stage with harder questions.
+    \item I liked learning that Osiris was the god of the afterlife — I always mixed him up with Ra.
+    \item Make the clues a bit clearer and more visible.
+    \item I would make the quiz interface a little more dynamic — maybe add animations when you get the answer right.
+\end{itemize}
+
+
+\begin{figure}[h!]
+\subsection*{Some Of The Used Models}
+    \centering
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3asfoura.png}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{tut.png}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{pharo.png}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{aboelhol.png}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    
+   
+\end{figure}
+
+
+
+
+\newpage\clearpage
+
+\subsection*{Two Positive Points}
+\begin{enumerate}
+    \item Users appreciated the \textbf{educational aspect}, especially learning history via quizzes.
+    \item The AR integration with physical space felt \textbf{immersive and interactive}.
+\end{enumerate}
+
+\subsection*{Two Points for Improvement}
+\begin{enumerate}
+    \item Users experienced issues with \textbf{AR tracking sensitivity}, particularly in low lighting.
+    \item Some found the \textbf{initial instructions unclear}, suggesting a short tutorial at the start.
+\end{enumerate}
+
+\section{Conclusion}
+
+The project successfully implemented an interactive AR treasure hunt that is both engaging and educational. Through user feedback, we identified key strengths and future areas of improvement. This experience demonstrated the power of AR in educational gaming and how historical content can be brought to life interactively.
+
+\end{document}
